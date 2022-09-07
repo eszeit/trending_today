@@ -1,0 +1,48 @@
+name: trending_today
+description: A new Flutter project.
+
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=2.18.0 <3.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.2
+  flutter_gen: ^4.3.0
+  flutter_svg: ^1.1.4
+  flutter_screenutil: ^5.5.4
+  auto_route: ^5.0.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^2.0.0
+  auto_route_generator: ^5.0.2
+  flutter_gen_runner: ^4.3.0
+  build_runner: ^2.2.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/svg/
+    - assets/png/
+    - assets/gif/
+
+  fonts:
+    - family: Aktiv Grotesk
+      fonts:
+        - asset: fonts/AktivGroteskRegular.ttf
+        - asset: fonts/AktivGroteskMedium.ttf
+          weight: 500
+        - asset: fonts/AktivGroteskBold.ttf
+          weight: 700
+
+flutter_gen:
+  integrations:
+    flutter_svg: true
