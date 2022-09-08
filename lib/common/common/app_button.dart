@@ -17,20 +17,18 @@ class AppButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ClipRRect(
+    return InkWell(
       borderRadius: BorderRadius.circular(56.0),
-      child: Material(
-        color: Colors.transparent,
+      splashColor: Colors.white10,
+      focusColor: Colors.white10,
+      onTap: onTap,
+      child: ClipRRect(
+        clipBehavior: Clip.hardEdge,
         borderRadius: BorderRadius.circular(56.0),
-        child: InkWell(
-          borderRadius: BorderRadius.circular(56.0),
-          splashColor: Colors.white10,
-          onTap: onTap,
-          child: _Decorator(
-            child: Align(
-              alignment: Alignment.center,
-              child: child,
-            ),
+        child: _Decorator(
+          child: Align(
+            alignment: Alignment.center,
+            child: child,
           ),
         ),
       ),
@@ -49,9 +47,8 @@ class _Decorator extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BackdropFilter(
-      filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
+      filter: ImageFilter.blur(sigmaX: 3, sigmaY: 3),
       child: Container(
-        clipBehavior: Clip.hardEdge,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(56.0),
           gradient: LinearGradient(

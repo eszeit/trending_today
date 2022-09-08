@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:trending_today/common/colors.dart';
 import 'package:trending_today/common/common/app_button.dart';
+import 'package:trending_today/common/mock.dart';
 import 'package:trending_today/common/typography.dart';
 import 'package:trending_today/main/widgets/gradient_text.dart';
 import 'package:trending_today/gen/assets.gen.dart';
+import 'package:trending_today/main/widgets/playlist_card.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -36,11 +38,18 @@ class HomePage extends StatelessWidget {
               ),
             ],
           ),
-          Image.asset(
-            Assets.gif.footerAnimation.path,
-            width: 270.r,
-            height: 245.r,
+          SizedBox(height: 32.h),
+          ListView.separated(
+            shrinkWrap: true,
+            physics: NeverScrollableScrollPhysics(),
+            separatorBuilder: (_, __) => SizedBox(height: 32.h),
+            itemCount: Mock.getMockPlaylists.length,
+            itemBuilder: (context, index) => PlaylistCard(
+              playlist: Mock.getMockPlaylists[index],
+            ),
+            padding: EdgeInsets.zero,
           ),
+          SizedBox(height: 32.h),
           Text(
             'Check back soon for new clips and creator content.',
             style: AppTypography.title.copyWith(
