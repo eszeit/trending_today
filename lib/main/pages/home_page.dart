@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:trending_today/common/colors.dart';
-import 'package:trending_today/common/common/app_button.dart';
+import 'package:trending_today/common/widgets/app_button.dart';
 import 'package:trending_today/common/mock.dart';
 import 'package:trending_today/common/typography.dart';
 import 'package:trending_today/main/widgets/gradient_text.dart';

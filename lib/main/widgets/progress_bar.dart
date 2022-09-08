@@ -28,7 +28,7 @@ class ProgressBar extends StatelessWidget {
           clipBehavior: Clip.none,
           children: [
             Positioned(
-              right: -1.5.r,
+              right: -4.r,
               child: _Flare(factor: progress),
             ),
             _InnerBar(factor: progress),
@@ -50,16 +50,16 @@ class _Flare extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 6.r,
-      height: 13.r,
+      width: 10.5.r,
+      height: 10.5.r,
       decoration: BoxDecoration(
         //oval shape
-        borderRadius: BorderRadius.all(Radius.elliptical(6, 13)),
+        borderRadius: BorderRadius.circular(11.r),
         boxShadow: [
           BoxShadow(
             blurRadius: 8,
             color: (factor < 1 && factor > 0)
-                ? Colors.white.withOpacity(0.48)
+                ? Colors.white.withOpacity(0.24)
                 : Colors.transparent,
           ),
         ],

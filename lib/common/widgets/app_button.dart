@@ -3,7 +3,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:trending_today/common/colors.dart';
-import 'package:trending_today/common/common/gradient_box_border.dart';
+import 'package:trending_today/common/widgets/gradient_box_border.dart';
 
 class AppButton extends StatelessWidget {
   const AppButton({
