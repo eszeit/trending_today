@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:auto_route/empty_router_widgets.dart';
 import 'package:trending_today/main/pages/home_page.dart';
+import 'package:trending_today/main/pages/tabs_page.dart';
 
 @AdaptiveAutoRouter(
   replaceInRouteName: 'Page,Route',
@@ -9,11 +10,11 @@ import 'package:trending_today/main/pages/home_page.dart';
       initial: true,
       name: 'MainRouter',
       path: 'home/',
-      page: EmptyRouterPage,
+      page: TabsPage,
       children: [
         MaterialRoute(
           page: HomePage,
-          path: 'main',
+          path: 'hot',
           initial: true,
         ),
       ],

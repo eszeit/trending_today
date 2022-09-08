@@ -22,11 +22,11 @@ class GradientText extends StatelessWidget {
       child: Text(
         text,
         style: textStyle != null
-            ? textStyle?.copyWith(color: Colors.white)
+            ? textStyle?.copyWith(color: Colors.white, height: 1.05)
             : TextStyle(
                 color: Colors.white,
                 //height other than 1 results in artifacts
-                height: 1,
+                height: 1.05,
               ),
       ),
     );

@@ -17,19 +17,12 @@ class AppButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      borderRadius: BorderRadius.circular(56.0),
-      splashColor: Colors.white10,
-      focusColor: Colors.white10,
+    return GestureDetector(
       onTap: onTap,
-      child: ClipRRect(
-        clipBehavior: Clip.hardEdge,
-        borderRadius: BorderRadius.circular(56.0),
-        child: _Decorator(
-          child: Align(
-            alignment: Alignment.center,
-            child: child,
-          ),
+      child: _Decorator(
+        child: Align(
+          alignment: Alignment.center,
+          child: child,
         ),
       ),
     );
@@ -37,50 +30,51 @@ class AppButton extends StatelessWidget {
 }
 
 class _Decorator extends StatelessWidget {
-  const _Decorator({
-    Key? key,
-    required this.child,
-  }) : super(key: key);
+  const _Decorator({Key? key, required this.child}) : super(key: key);
 
   final Widget child;
 
   @override
   Widget build(BuildContext context) {
-    return BackdropFilter(
-      filter: ImageFilter.blur(sigmaX: 3, sigmaY: 3),
-      child: Container(
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(56.0),
-          gradient: LinearGradient(
-            colors: [
-              AppColors.sunGold.withOpacity(0.5),
-              AppColors.sunGold.withOpacity(0.0),
+    return ClipRRect(
+      clipBehavior: Clip.hardEdge,
+      borderRadius: BorderRadius.circular(56.0),
+      child: BackdropFilter(
+        filter: ImageFilter.blur(sigmaX: 3, sigmaY: 3),
+        child: Container(
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(56.0),
+            gradient: LinearGradient(
+              colors: [
+                AppColors.sunGold.withOpacity(0.5),
+                AppColors.sunGold.withOpacity(0.0),
+              ],
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+            ),
+            border: GradientBoxBorder(
+              gradient: AppColors.buttonBorderGradient,
+              width: 0.5,
+            ),
+            boxShadow: [
+              BoxShadow(
+                blurRadius: 40,
+                color: Colors.white.withOpacity(0.05),
+              ),
+              BoxShadow(
+                blurRadius: 3,
+                blurStyle: BlurStyle.outer,
+                offset: Offset(0, 2),
+                color: Colors.white.withOpacity(0.15),
+              ),
             ],
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
           ),
-          border: GradientBoxBorder(
-            gradient: AppColors.buttonBorderGradient,
-            width: 0.5,
+          constraints: BoxConstraints.expand(
+            width: double.infinity,
+            height: 56.h,
           ),
-          boxShadow: [
-            BoxShadow(
-              blurRadius: 40,
-              color: Colors.white.withOpacity(0.05),
-            ),
-            BoxShadow(
-              blurRadius: 3,
-              blurStyle: BlurStyle.outer,
-              offset: Offset(0, 2),
-              color: Colors.white.withOpacity(0.15),
-            ),
-          ],
+          child: child,
         ),
-        constraints: BoxConstraints.expand(
-          width: double.infinity,
-          height: 56.h,
-        ),
-        child: child,
       ),
     );
   }

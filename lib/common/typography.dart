@@ -40,6 +40,7 @@ class AppTypography {
     fontSize: 10.sp,
     height: 13 / 10,
     letterSpacing: 0.2,
+    fontWeight: FontWeight.w500,
   );
 
   static final TextStyle button = TextStyle(

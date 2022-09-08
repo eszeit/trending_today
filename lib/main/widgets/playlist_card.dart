@@ -90,9 +90,7 @@ class _CardContents extends StatelessWidget {
             Positioned(
               bottom: -32.r,
               right: 20.r,
-              child: PlayButton(
-                width: 64.r,
-              ),
+              child: PlayButton(width: 64.r),
             ),
           ],
         ),
@@ -162,7 +160,7 @@ class _DropShadow extends StatelessWidget {
   Widget build(BuildContext context) {
     return ClipRRect(
       clipper: ClipPad(
-        padding: EdgeInsets.only(left: 10.r, top: 10.r),
+        padding: EdgeInsets.only(left: 14.r, top: 14.r),
         radius: Radius.circular(32.r),
       ),
       child: DecoratedBox(
@@ -171,8 +169,8 @@ class _DropShadow extends StatelessWidget {
           color: Colors.transparent,
           boxShadow: [
             BoxShadow(
-              color: shadowColor.withOpacity(0.2),
-              blurRadius: 16,
+              color: shadowColor.withOpacity(0.17),
+              blurRadius: 25,
               blurStyle: BlurStyle.outer,
             ),
           ],
@@ -199,14 +197,13 @@ class _ColoredBorderContainer extends StatelessWidget {
         boxShadow: [
           BoxShadow(
             color: Colors.white.withOpacity(0.05),
-            offset: Offset(0, 2),
+            //offset: Offset(0, 2),
             blurRadius: 4,
             blurStyle: BlurStyle.outer,
           ),
           BoxShadow(
-            color: Colors.white.withOpacity(0.03),
-            offset: Offset(0, 12),
-            blurRadius: 24,
+            color: Colors.white.withOpacity(0.025),
+            blurRadius: 32,
             blurStyle: BlurStyle.outer,
           ),
         ],
@@ -217,7 +214,7 @@ class _ColoredBorderContainer extends StatelessWidget {
               color.withOpacity(0.0),
             ],
             center: Alignment.topLeft,
-            radius: 1.5,
+            radius: 1.15,
           ),
           width: 1,
         ),
