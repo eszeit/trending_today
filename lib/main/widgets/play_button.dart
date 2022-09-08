@@ -14,13 +14,13 @@ class PlayButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ClipRRect(
-      borderRadius: BorderRadius.circular(32.r),
-      child: _DropShadow(
+    return _DropShadow(
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(32.r),
         child: BackdropFilter(
           filter: ImageFilter.blur(
-            sigmaX: 10,
-            sigmaY: 10,
+            sigmaX: 16,
+            sigmaY: 16,
           ),
           child: _ButtonBody(
             width: width ?? 64.r,
@@ -111,11 +111,14 @@ class _DropShadow extends StatelessWidget {
   Widget build(BuildContext context) {
     return DecoratedBox(
       decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(32.r),
         boxShadow: [
           BoxShadow(
             color: Colors.black.withOpacity(0.4),
-            blurRadius: 16,
+            blurRadius: 20,
             offset: Offset(0, 8),
+            spreadRadius: -8,
+            blurStyle: BlurStyle.outer,
           ),
         ],
       ),
